@@ -10,7 +10,7 @@ function initNotifications() {
                 notificationsEnabled = true;
                 console.log("Granted");
             } else {
-                alert("You denied Notifications, it's so sad :(");
+                alert("You denied Notifications");
             }
         });
     } else {
@@ -25,8 +25,6 @@ function showNotification() {
             body : 'You clicked on the button !',
             icon : 'thumb.png'
         });
-        console.log("get here");
-
         n.onclick = () => {
             window.open('https://google.com')
         }
