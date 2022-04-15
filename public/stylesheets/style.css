@@ -29,6 +29,10 @@ html{
     display:flex;
 }  
 
+#notifyBtn{
+    color: aquamarine;
+}
+
 @keyframes example {
     0%   {top: 150px;}
     100% {top: 0px;}
