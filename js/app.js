@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
   database : 'the12thman'
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const indexRouter = require('./routes/index');
 const app = express();
