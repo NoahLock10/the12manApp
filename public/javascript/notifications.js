@@ -17,6 +17,7 @@ function initNotifications() {
         alert("Your browser doesn't support Notifications API");
     }
 }
+notificationsEnabled = true;
 
 function showNotification() {
     if (notificationsEnabled) {
