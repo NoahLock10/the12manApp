@@ -1,6 +1,6 @@
 function userLocation() {
   // The location of Uluru
-  const texas = { lat: 30.6187, lng: -96.3365 };
+  const texas = { lat: 27.2046, lng: 77.4977 };
   // The map, centered at Uluru
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 13,
