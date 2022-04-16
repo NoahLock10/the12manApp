@@ -1,7 +1,8 @@
 // import android.app.NotificationManager;
 // import android.support.v4.app.NotificationCompat;
 
-var notificationsEnabled = true;
+var notificationsEnabled = false;
+document.getElementById("notifyBtn").onload = function() {initNotifications()};
             
 function initNotifications() {
     if (window.Notification) {
