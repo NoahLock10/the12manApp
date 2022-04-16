@@ -12,5 +12,3 @@ function userLocation() {
     map: map,
   });
 }
-
-window.initMap = initMap;

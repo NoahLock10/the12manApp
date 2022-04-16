@@ -1,7 +1,7 @@
 // import android.app.NotificationManager;
 // import android.support.v4.app.NotificationCompat;
 
-var notificationsEnabled = false;
+var notificationsEnabled = true;
             
 function initNotifications() {
     if (window.Notification) {
@@ -17,7 +17,6 @@ function initNotifications() {
         alert("Your browser doesn't support Notifications API");
     }
 }
-notificationsEnabled = true;
 
 function showNotification() {
     if (notificationsEnabled) {
