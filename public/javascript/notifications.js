@@ -4,11 +4,16 @@
 var notificationsEnabled = false;
 document.getElementById("notifyBtn").onload = function() {initNotifications()};
             
+navigator.serviceWorker.register('sw.js');
+
 function initNotifications() {
     if (window.Notification) {
         Notification.requestPermission(function(permission) {
             if (permission === 'granted') {
                 notificationsEnabled = true;
+                navigator.serviceWorker.ready.then(function(registration) {
+                    registration.showNotification('Notification with ServiceWorker');
+                });
                 console.log("Granted");
             } else {
                 alert("You denied Notifications");
