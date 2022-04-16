@@ -1,26 +1,36 @@
 html{
     height: 100%;
+    font-family: "Playfair Display";
 }
-#container{
-    padding-top: 2%;
+
+.body-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100vh;
     background-image: linear-gradient(lightblue, white);
     background-size: cover;
-    color: black;
-    position: fixed;
-    height: 100%;
-    font-family: "Playfair Display";
-    display: flex;
 }
+
+.container {
+    padding-top: 2%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
 #title{
     position: relative;
-    animation-name: example;
+    animation-name: moveUp;
     animation-duration: 2s;
 }
 
 #status{
     color: green;
     position: relative;
-    animation-name: example;
+    animation-name: moveUp;
     animation-duration: 2s;
 }
 #map {
@@ -31,10 +41,20 @@ html{
 }  
 
 #notifyBtn{
-    color: aquamarine;
+    animation-name: moveUp;
+    animation-duration: 2s;
 }
-
-@keyframes example {
+.button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+@keyframes moveUp {
     0%   {top: 150px;}
     100% {top: 0px;}
 }
