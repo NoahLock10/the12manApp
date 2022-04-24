@@ -1,11 +1,13 @@
 {
   "dependencies": {
     "@google-cloud/vision": "^2.4.2",
+    "body-parser": "^1.20.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "http": "^0.0.1-security",
     "mysql": "^2.18.1",
-    "nodejs": "^0.0.0"
+    "nodejs": "^0.0.0",
+    "web-push": "^3.4.5"
   },
   "scripts": {
     "start": "npm run dev",

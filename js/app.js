@@ -2,6 +2,7 @@ const express    = require("express");
 const mysql      = require('mysql');
 const { DOUBLE } = require("mysql/lib/protocol/constants/types");
 const path       = require("path");
+
 const connection = mysql.createConnection({
   host     : 'mysql-the12mandb.crceajnljqt4.us-east-2.rds.amazonaws.com',
   port     : '3306',
@@ -21,6 +22,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(path.join(__dirname, '../public')));
 
+app.get('/api/coord', (req, res) => {res.send(JSON.stringify(globalLocation))});
+
 app.use('/', indexRouter.homepage);
 
 const listener = app.listen(PORT, (err) => {
@@ -31,24 +34,21 @@ const listener = app.listen(PORT, (err) => {
   console.info(`Listening on port ${listener.address().port}`);
 });
 
-/*
-var long =  30.6187;
-var latit = -96.3365;
+const globalLocation = { 
+  lat: null,
+  lng: null,
+};
 
 connection.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
-  connection.query("SELECT Longitude FROM GPSCoordinates", function (err, result, fields) {
+  connection.query("SELECT Longitude, Latidude FROM GPSCoordinates", function (err, result, fields) {
     if (err) throw err;
-    long = result[0].Longitude;
-    console.log(long);
-  });
-  connection.query("SELECT Latidude FROM GPSCoordinates", function (err, result, fields) {
-    if (err) throw err;
-    latit = result[0].Latidude;
-    console.log(latit);
+    globalLocation.lat = result[0].Latidude;
+    globalLocation.lng = result[0].Longitude
+    console.log(globalLocation);
   });
 });
-
-var work= latit;
-*/
+ 
+//export default globalLocation;
+//const texas = { lat: 32.1432, lng: 93.2131};

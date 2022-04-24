@@ -11,9 +11,6 @@ function initNotifications() {
         Notification.requestPermission(function(permission) {
             if (permission === 'granted') {
                 notificationsEnabled = true;
-                navigator.serviceWorker.ready.then(function(registration) {
-                    registration.showNotification('Notification with ServiceWorker');
-                });
                 console.log("Granted");
             } else {
                 alert("You denied Notifications");
@@ -24,6 +21,17 @@ function initNotifications() {
     }
 }
 
+function showNotification() {
+    navigator.serviceWorker.ready.then(function(registration) {
+        registration.showNotification('Vibration Sample', {
+            body: 'Buzz! Buzz!',
+            vibrate: [200, 100, 200, 100, 200, 100, 200],
+            tag: 'vibration-sample'
+        });
+    });
+}
+
+/*
 function showNotification() {
     if (notificationsEnabled) {
         console.log("Button pushed");
@@ -37,4 +45,4 @@ function showNotification() {
     } else {
         alert("Notifications are disabled");
     }
-}
+}*/
